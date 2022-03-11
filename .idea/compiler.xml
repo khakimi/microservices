@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="UserRegistry" />
+        <module name="gateway" />
+        <module name="EurekaService" />
+        <module name="Auth" />
+        <module name="GatewayService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Auth" target="11" />
+      <module name="AuthService" target="11" />
+      <module name="EurekaService" target="11" />
+      <module name="Gateway" target="11" />
+      <module name="gateway" target="11" />
+      <module name="GatewayService" target="11" />
+      <module name="Otp" target="11" />
+      <module name="UserRegistry" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Auth" options="-parameters" />
+      <module name="AuthService" options="-parameters" />
+      <module name="EurekaService" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
+      <module name="GatewayService" options="-parameters" />
+      <module name="Otp" options="-parameters" />
+      <module name="UserRegistry" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+    </option>
+  </component>
+</project>
