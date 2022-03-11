@@ -1,0 +1,31 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-registry
+          uri: lb://user-registry
+          predicates:
+            - Path=/api/**
+        - id: auth
+          uri: lb://auth
+          predicates:
+            - Path=/auth/**
+
+
+jwt:
+  secret: secretkey
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    hostname: localhost
+
