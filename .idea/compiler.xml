@@ -23,6 +23,7 @@
       <module name="GatewayService" target="11" />
       <module name="Otp" target="11" />
       <module name="UserRegistry" target="11" />
+      <module name="UserService" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -34,6 +35,7 @@
       <module name="GatewayService" options="-parameters" />
       <module name="Otp" options="-parameters" />
       <module name="UserRegistry" options="-parameters" />
+      <module name="UserService" options="-parameters" />
       <module name="gateway" options="-parameters" />
     </option>
   </component>

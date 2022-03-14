@@ -16,8 +16,7 @@ public class JwtUtil {
     public static final Logger LOG = LoggerFactory.getLogger(JwtUtil.class);
     public Claims getClaims(final String token) {
         try {
-            Claims body = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
-            return body;
+            return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
         } catch (Exception e) {
             LOG.error(e.getMessage());
         }
@@ -36,6 +35,14 @@ public class JwtUtil {
             return false;
         }
         return true;
+    }
+
+    public String getUserPhoneNumberFromToken(String token) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(jwtSecret)
+                .parseClaimsJws(token)
+                .getBody();
+        return (String) claims.get("phoneNumber");
     }
 
 }

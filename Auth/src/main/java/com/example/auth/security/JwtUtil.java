@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class JwtUtil {
@@ -15,13 +17,19 @@ public class JwtUtil {
     @Value("${jwt.token.validity}")
     private long tokenValidity;
 
-    public String generateToken(String id) {
-        Claims claims = Jwts.claims().setSubject(id);
+    public String generateToken(String phoneNumber) {
+        Map<String, Object> claimsMap = new HashMap<>();
+        claimsMap.put("phoneNumber", phoneNumber);
         long nowMillis = System.currentTimeMillis();
         long expMillis = nowMillis + tokenValidity;
         Date exp = new Date(expMillis);
-        return Jwts.builder().setClaims(claims).setIssuedAt(new Date(nowMillis)).setExpiration(exp)
-                .signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
+        return Jwts.builder()
+                .setSubject(phoneNumber)
+                .setClaims(claimsMap)
+                .setIssuedAt(new Date(nowMillis))
+                .setExpiration(exp)
+                .signWith(SignatureAlgorithm.HS512, jwtSecret)
+                .compact();
     }
 
 }
