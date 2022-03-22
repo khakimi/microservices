@@ -1,0 +1,24 @@
+twilio:
+  account_sid: ${SID}
+  auth_token: ${TOKEN}
+  service_id: ${ID}
+
+
+server:
+  servlet:
+    context-path: /api/v1
+  port: 9093
+
+spring:
+  application:
+    name: auth-server
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  instance:
+    hostname: localhost

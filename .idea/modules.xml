@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Auth/Auth.iml" filepath="$PROJECT_DIR$/Auth/Auth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EurekaService/EurekaService.iml" filepath="$PROJECT_DIR$/EurekaService/EurekaService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UserRegistry/UserRegistry.iml" filepath="$PROJECT_DIR$/UserRegistry/UserRegistry.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserRegistry/UserService.iml" filepath="$PROJECT_DIR$/UserRegistry/UserService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/auth-server/auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-server/gateway-server.iml" filepath="$PROJECT_DIR$/gateway-server/gateway-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservices.iml" filepath="$PROJECT_DIR$/microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-server/user-server.iml" filepath="$PROJECT_DIR$/user-server/user-server.iml" />
     </modules>
   </component>
 </project>

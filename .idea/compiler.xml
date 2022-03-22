@@ -7,36 +7,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UserRegistry" />
-        <module name="gateway" />
-        <module name="EurekaService" />
-        <module name="Auth" />
-        <module name="GatewayService" />
+        <module name="gateway-server" />
+        <module name="UserService" />
+        <module name="eureka-server" />
+        <module name="user-server" />
+        <module name="auth-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Auth" target="11" />
+      <module name="auth-server" target="11" />
       <module name="AuthService" target="11" />
-      <module name="EurekaService" target="11" />
+      <module name="eureka-server" target="11" />
       <module name="Gateway" target="11" />
-      <module name="gateway" target="11" />
+      <module name="gateway-server" target="11" />
       <module name="GatewayService" target="11" />
       <module name="Otp" target="11" />
-      <module name="UserRegistry" target="11" />
+      <module name="user-server" target="11" />
       <module name="UserService" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Auth" options="-parameters" />
       <module name="AuthService" options="-parameters" />
-      <module name="EurekaService" options="-parameters" />
       <module name="Gateway" options="-parameters" />
       <module name="GatewayService" options="-parameters" />
       <module name="Otp" options="-parameters" />
-      <module name="UserRegistry" options="-parameters" />
       <module name="UserService" options="-parameters" />
-      <module name="gateway" options="-parameters" />
+      <module name="auth-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
+      <module name="user-server" options="-parameters" />
     </option>
   </component>
 </project>
