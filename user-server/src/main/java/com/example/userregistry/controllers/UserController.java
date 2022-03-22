@@ -22,18 +22,18 @@ public class UserController {
     private final JwtUtil jwtUtil;
 
     @PostMapping("/save")
-    public ResponseEntity<Object> saveUser(@Valid @RequestBody UserDTO userDTO, HttpServletRequest httpServletRequest) {
+    public UserDTO saveUser(@Valid @RequestBody UserDTO userDTO, HttpServletRequest httpServletRequest) {
         String userPhoneNumber = getPhoneNumberFromHttpRequest(httpServletRequest);
         userDTO.setPhoneNumber(userPhoneNumber);
         userServiceImpl.saveUser(userDTO);
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return userDTO;
     }
 
     @GetMapping("/get")
-    public ResponseEntity<Object> getUser(HttpServletRequest httpServletRequest) {
+    public UserDTO getUser(HttpServletRequest httpServletRequest) {
         String userPhoneNumber = getPhoneNumberFromHttpRequest(httpServletRequest);
         UserDTO userDTO = userServiceImpl.getUser(userPhoneNumber);
-        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+        return userDTO;
     }
 
     private String getPhoneNumberFromHttpRequest(HttpServletRequest httpServletRequest) {

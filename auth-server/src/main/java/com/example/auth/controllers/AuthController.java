@@ -24,9 +24,9 @@ public class AuthController {
     private final PhoneVerificationService phoneVerificationService;
 
     @PostMapping("/test-login")
-    public ResponseEntity<String> testLogin(@RequestBody Map<String, String> phoneNumber) {
+    public String testLogin(@RequestBody Map<String, String> phoneNumber) {
         String token = jwtUtil.generateToken(phoneNumber.get(PHONE_NUMBER));
-        return new ResponseEntity<>(token, HttpStatus.OK);
+        return token;
     }
 
     @PostMapping("/send-otp")
