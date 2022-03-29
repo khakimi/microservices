@@ -25,8 +25,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
         proxyTargetClass = true
 )
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-
     private final JWTAuthenticationFilter jwtAuthenticationFilter;
 
     @Override
@@ -35,6 +33,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtAuthenticationFilter,
                 UsernamePasswordAuthenticationFilter.class);
     }
-
-
 }

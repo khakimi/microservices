@@ -6,7 +6,9 @@ import lombok.Data;
 public class VerificationResult {
 
     private final String id;
+
     private final String[] errors;
+
     private final boolean valid;
 
     public VerificationResult(String id) {
@@ -20,5 +22,4 @@ public class VerificationResult {
         this.errors = errors;
         this.valid = false;
     }
-
 }

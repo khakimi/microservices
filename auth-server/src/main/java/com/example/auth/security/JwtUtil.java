@@ -10,19 +10,18 @@ import java.util.Map;
 
 @Component
 public class JwtUtil {
+
     public String generateToken(String phoneNumber) {
         Map<String, Object> claimsMap = new HashMap<>();
         claimsMap.put("phoneNumber", phoneNumber);
         long nowMillis = System.currentTimeMillis();
         long expMillis = nowMillis + SecurityConstants.EXPIRATION_TIME;
-        Date exp = new Date(expMillis);
         return Jwts.builder()
                 .setSubject(phoneNumber)
                 .setClaims(claimsMap)
                 .setIssuedAt(new Date(nowMillis))
-                .setExpiration(exp)
+                .setExpiration(new Date(expMillis))
                 .signWith(SignatureAlgorithm.HS512, SecurityConstants.SECRET)
                 .compact();
     }
-
 }

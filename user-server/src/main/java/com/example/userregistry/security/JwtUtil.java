@@ -1,12 +1,15 @@
 package com.example.userregistry.security;
 
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
 
 @Slf4j
 @Component
@@ -32,5 +35,4 @@ public class JwtUtil {
                 .getBody();
         return (String) claims.get("phoneNumber");
     }
-
 }

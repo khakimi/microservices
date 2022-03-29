@@ -17,31 +17,40 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @NotBlank
     @Column(unique = true)
     private String phoneNumber;
+
     private String email;
 
     private String name;
+
     private String lastname;
+
     private String patronymic;
 
     private String passportNumber;
+
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date birthDate;
+
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date passportIssueDate;
+
     private String maritalStatus;
 
     private BigDecimal monthlyIncome;
+
     private BigDecimal monthlyExpensesOnAlimonyAndCredits;
+
     private String incomeVerificationMethod;
 
     public User(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
 }

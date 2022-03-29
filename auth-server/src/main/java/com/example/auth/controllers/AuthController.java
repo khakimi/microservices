@@ -17,6 +17,8 @@ import static com.example.auth.security.SecurityConstants.PHONE_NUMBER;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
+@CrossOrigin("*")
+
 public class AuthController {
 
     private final JwtUtil jwtUtil;
@@ -33,7 +35,7 @@ public class AuthController {
     public ResponseEntity<String> sendOtp(@RequestBody Map<String, String> phoneNumber) {
         VerificationResult result = phoneVerificationService.startVerification(phoneNumber.get(PHONE_NUMBER));
         return result.isValid()
-                ? new ResponseEntity<>("Otp was successfully sent on your phone number!", HttpStatus.OK)
+                ? new ResponseEntity<>("Otp was successfully sent on phone number: " + phoneNumber, HttpStatus.OK)
                 : new ResponseEntity<>(Arrays.toString(result.getErrors()), HttpStatus.BAD_REQUEST);
     }
 
@@ -44,5 +46,4 @@ public class AuthController {
                 ? new ResponseEntity<>(jwtUtil.generateToken(verification.get(PHONE_NUMBER)), HttpStatus.OK)
                 : new ResponseEntity<>(Arrays.toString(result.getErrors()), HttpStatus.UNAUTHORIZED);
     }
-
 }

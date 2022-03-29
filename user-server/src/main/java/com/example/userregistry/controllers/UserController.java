@@ -4,10 +4,7 @@ import com.example.userregistry.dto.UserDTO;
 import com.example.userregistry.security.JwtUtil;
 import com.example.userregistry.services.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -16,9 +13,11 @@ import static com.example.userregistry.security.SecurityConstants.HEADER_STRING;
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class UserController {
 
     private final UserServiceImpl userServiceImpl;
+
     private final JwtUtil jwtUtil;
 
     @PostMapping("/save")
@@ -39,5 +38,4 @@ public class UserController {
     private String getPhoneNumberFromHttpRequest(HttpServletRequest httpServletRequest) {
         return jwtUtil.getUserPhoneNumberFromToken(httpServletRequest.getHeader(HEADER_STRING));
     }
-
 }

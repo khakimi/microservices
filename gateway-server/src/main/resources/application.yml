@@ -3,6 +3,16 @@ spring:
     name: gateway-serer
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+
+
       routes:
         - id: user-server
           uri: lb://user-server

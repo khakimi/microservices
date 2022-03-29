@@ -13,6 +13,7 @@ import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 @RestControllerAdvice
 public class ControllerAdvisor {
+
     @ExceptionHandler({SignatureException.class,
             MalformedJwtException.class,
             ExpiredJwtException.class,
@@ -26,5 +27,4 @@ public class ControllerAdvisor {
                 .timestamp(now())
                 .build();
     }
-
 }
