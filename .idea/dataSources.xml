@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:h2:file:$PROJECT_DIR$/UserRegistry/src/main/resources/data;AUTO_SERVER=true</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="tests" uuid="824da4ba-e369-4fe6-b3da-e14fbed4dac4">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:file:$PROJECT_DIR$/user-server/src/test/resources/tests</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

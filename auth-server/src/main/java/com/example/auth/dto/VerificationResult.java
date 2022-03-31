@@ -9,17 +9,21 @@ public class VerificationResult {
 
     private final String[] errors;
 
-    private final boolean valid;
+    private final boolean isValid;
 
     public VerificationResult(String id) {
         this.id = id;
         this.errors = new String[]{};
-        this.valid = true;
+        this.isValid = true;
     }
 
     public VerificationResult(String[] errors) {
         this.id = "";
         this.errors = errors;
-        this.valid = false;
+        this.isValid = false;
+    }
+
+    public boolean isValid() {
+        return isValid;
     }
 }

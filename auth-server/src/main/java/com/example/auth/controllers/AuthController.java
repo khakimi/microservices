@@ -27,8 +27,7 @@ public class AuthController {
 
     @PostMapping("/test-login")
     public String testLogin(@RequestBody Map<String, String> phoneNumber) {
-        String token = jwtUtil.generateToken(phoneNumber.get(PHONE_NUMBER));
-        return token;
+        return jwtUtil.generateToken(phoneNumber.get(PHONE_NUMBER));
     }
 
     @PostMapping("/send-otp")
