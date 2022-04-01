@@ -5,16 +5,17 @@ import com.example.userserver.converter.UserMapperImpl;
 import com.example.userserver.dto.UserDTO;
 import com.example.userserver.models.User;
 import com.example.userserver.repository.UserRepository;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
@@ -28,23 +29,14 @@ class UserServiceImplTest {
 
     private final UserMapper userMapper = new UserMapperImpl();
 
-    AutoCloseable autoCloseable;
-
-
     @BeforeEach
     void setup() {
-        autoCloseable = MockitoAnnotations.openMocks(this);
         userService = new UserServiceImpl(userRepository, userMapper);
     }
 
-    @AfterEach
-    void tearDown() throws Exception {
-        autoCloseable.close();
-    }
-
     @Test
+    @Transactional
     void saveUserTest() {
-
         User user = new User("1234567");
         //when
         userService.saveUser(userMapper.EntityToDTO(user));
@@ -58,6 +50,7 @@ class UserServiceImplTest {
     }
 
     @Test
+    @Transactional
     void getUserTest() {
         // given
         String phoneNumber="1234567";

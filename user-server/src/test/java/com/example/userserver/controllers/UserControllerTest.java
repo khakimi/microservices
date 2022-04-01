@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 
 import static com.example.userserver.security.SecurityConstants.HEADER_STRING;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -33,16 +34,13 @@ class UserControllerTest {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @Autowired
-    private UserRepository userRepository;
-
     @BeforeEach
     void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
-        userRepository.deleteAll();
     }
 
     @Test
+    @Transactional
     void saveUser() throws Exception {
         //given
         String phoneNumber = "1234567";
@@ -59,6 +57,7 @@ class UserControllerTest {
     }
 
     @Test
+    @Transactional
     void getUser() throws Exception {
         //given
         String phoneNumber = "1234567";
