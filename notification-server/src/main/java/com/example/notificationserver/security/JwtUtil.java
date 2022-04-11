@@ -1,4 +1,6 @@
-package com.example.userserver.security;
+package com.example.notificationserver.security;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.Claims;
@@ -7,8 +9,6 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureException;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.HashMap;

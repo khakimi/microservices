@@ -11,6 +11,7 @@
         <module name="UserService" />
         <module name="eureka-server" />
         <module name="user-server" />
+        <module name="notification-server" />
         <module name="auth-server" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="Gateway" target="11" />
       <module name="gateway-server" target="11" />
       <module name="GatewayService" target="11" />
+      <module name="notification-server" target="11" />
       <module name="Otp" target="11" />
       <module name="user-server" target="11" />
       <module name="user-server1" target="11" />
@@ -37,6 +39,7 @@
       <module name="auth-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="gateway-server" options="-parameters" />
+      <module name="notification-server" options="-parameters" />
       <module name="user-server" options="-parameters" />
       <module name="user-server1" options="-parameters" />
     </option>

@@ -1,4 +1,4 @@
-package com.example.userserver.dto;
+package com.example.notificationserver.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/gateway-server/gateway-server.iml" filepath="$PROJECT_DIR$/gateway-server/gateway-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-server1/src/main/main.iml" filepath="$PROJECT_DIR$/user-server1/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservices.iml" filepath="$PROJECT_DIR$/microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification-server/notification-server.iml" filepath="$PROJECT_DIR$/notification-server/notification-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-server1/src/test/test.iml" filepath="$PROJECT_DIR$/user-server1/src/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-server/user-server.iml" filepath="$PROJECT_DIR$/user-server/user-server.iml" />
     </modules>

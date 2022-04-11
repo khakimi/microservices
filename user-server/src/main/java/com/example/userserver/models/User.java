@@ -18,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@ToString
 public class User {
 
     @Id
@@ -52,7 +53,13 @@ public class User {
 
     private String incomeVerificationMethod;
 
+    private Date lastChangeDate;
+
+    private boolean isFieldsCompleted;
+
     public User(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        this.lastChangeDate = new Date();
+        this.isFieldsCompleted = false;
     }
 }

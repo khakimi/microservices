@@ -1,0 +1,19 @@
+package com.example.userserver.models;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserNotification {
+
+    private String name;
+
+    private String email;
+
+    private String phoneNumber;
+
+}
